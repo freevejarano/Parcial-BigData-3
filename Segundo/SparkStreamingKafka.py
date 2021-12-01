@@ -29,7 +29,7 @@ consulta=consulta.withColumnRenamed('max(PRICE1)', 'Maximo')
 consulta=consulta.withColumnRenamed('avg(PRICE)', 'Promedio')
 
 
-writer = query \
+writer = consulta \
     .writeStream \
     .outputMode("complete") \
     .format("console") \

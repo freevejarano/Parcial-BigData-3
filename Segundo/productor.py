@@ -9,7 +9,7 @@ productor = KafkaProducer(bootstrap_servers=['localhost:9092'])
 sc=spark.sparkContext
 sqlContext = SQLContext(sc)
 
-df= sqlContext.read.csv("Parcial-BigData-3/Segundo/SPY_TICK_TRADE.csv", header="true">
+df= sqlContext.read.csv("SPY_TICK_TRADE.csv", header="true")
 sample = df.rdd.map(lambda x: (x.PRICE))
 
 for row in sample.collect():
